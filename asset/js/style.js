@@ -1,5 +1,4 @@
 $(document).ready(function(){
-      // Toggle left sidebar
       $('.menu-toggle').click(function(){
         $('.sidebar').addClass('active');
       });
@@ -8,7 +7,6 @@ $(document).ready(function(){
         $('.sidebar').removeClass('active');
       });
 
-      // Toggle right sidebar
       $('.right-sidebar-toggle').click(function(){
         $('.right-sidebar').addClass('active');
       });
@@ -17,40 +15,100 @@ $(document).ready(function(){
         $('.right-sidebar').removeClass('active');
       });
 
-      // Header Dropdown functionality
       $('.header-dropdown .dropbtn').click(function(e){
         e.stopPropagation();
         var parent = $(this).parent('.header-dropdown');
 
-        // Close other header dropdowns
         $('.header-dropdown').not(parent).removeClass('active').find('.header-dropdown-content').slideUp(200);
 
-        // Toggle current dropdown
         parent.toggleClass('active');
         parent.find('.header-dropdown-content').slideToggle(200);
       });
 
-      // Sidebar Dropdown functionality
       $('.sidebar-dropdown > a').click(function(e){
         e.preventDefault();
         var parent = $(this).parent('.sidebar-dropdown');
 
-        // Close other sidebar dropdowns
         $('.sidebar-dropdown').not(parent).removeClass('active').find('.sidebar-dropdown-content').slideUp(200);
 
-        // Toggle current dropdown
         parent.toggleClass('active');
         parent.find('.sidebar-dropdown-content').slideToggle(200);
       });
 
-      // Close all dropdowns when clicking outside
       $(document).click(function(){
         $('.header-dropdown').removeClass('active').find('.header-dropdown-content').slideUp(200);
         $('.sidebar-dropdown').removeClass('active').find('.sidebar-dropdown-content').slideUp(200);
       });
 
-      // Prevent closing dropdown when clicking inside
       $('.header-dropdown-content, .sidebar-dropdown-content').click(function(e){
         e.stopPropagation();
       });
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+  const modalUploadArea = document.getElementById("modalUploadArea");
+  const fileInput = document.getElementById("fileInput");
+  const previewContainer = document.getElementById("previewContainer");
+  const browseButton = document.getElementById("browseButton");
+
+  // Open file dialog when upload button is clicked
+  browseButton.addEventListener("click", () => {
+    fileInput.click();
+  });
+
+  // Handle file selection from input
+  fileInput.addEventListener("change", handleFiles);
+
+  // Drag and drop functionality
+  modalUploadArea.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    modalUploadArea.classList.add("dragging");
+  });
+
+  modalUploadArea.addEventListener("dragleave", () => {
+    modalUploadArea.classList.remove("dragging");
+  });
+
+  modalUploadArea.addEventListener("drop", (e) => {
+    e.preventDefault();
+    modalUploadArea.classList.remove("dragging");
+    const files = e.dataTransfer.files;
+    handleFiles({ target: { files } });
+  });
+
+  // Function to handle file(s) input
+  function handleFiles(event) {
+    const files = event.target.files;
+    for (const file of files) {
+      if (file && file.type.startsWith("image/")) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          displayImage(e.target.result, file.name);
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  }
+
+  // Function to display the image preview with remove option
+  function displayImage(src, name) {
+    const previewDiv = document.createElement("div");
+    previewDiv.classList.add("image-preview-wrapper");
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = name;
+    img.classList.add("preview-image");
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "X";
+    removeBtn.classList.add("remove-image");
+    removeBtn.addEventListener("click", () => {
+      previewDiv.remove();
+    });
+
+    previewDiv.appendChild(img);
+    previewDiv.appendChild(removeBtn);
+    previewContainer.appendChild(previewDiv);
+  }
+});
