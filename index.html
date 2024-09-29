@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONNOTOMO - Portfolio Management System</title>
+    <link
+      rel="shortcut icon"
+      href="asset/images/favicon/login.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="asset/css/style.css" />
+  </head>
+  <body>
+    <!-- Left Sidebar for Desktop and Mobile -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>ONNOTOMO</h2>
+        <button class="close-sidebar" aria-label="Close Sidebar">
+          &times;
+        </button>
+      </div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="sidebar-dropdown">
+          <a href="#"
+            ><i class="fas fa-envelope"></i> Messages
+            <i class="fas fa-chevron-down dropdown-icon"></i
+          ></a>
+          <ul class="dropdown-content sidebar-dropdown-content">
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">Sent</a></li>
+            <li><a href="#">Drafts</a></li>
+          </ul>
+        </li>
+        <li class="sidebar-dropdown">
+          <a href="#"
+            ><i class="fas fa-bell"></i> Notifications
+            <i class="fas fa-chevron-down dropdown-icon"></i
+          ></a>
+          <ul class="dropdown-content sidebar-dropdown-content">
+            <li><a href="#">All Notifications</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </li>
+        <!-- Add more sidebar items as needed -->
+      </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Open Sidebar">
+            <i class="fas fa-bars"></i>
+          </button>
+          <a href="#" class="home-btn"><i class="fas fa-home"></i> Home</a>
+        </div>
+        <div class="header-right">
+          <div class="header-dropdown">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-envelope"></i>
+              <span class="badge">3</span>
+            </button>
+            <div class="dropdown-content header-dropdown-content">
+              <a href="#">Inbox</a>
+              <a href="#">Sent</a>
+              <a href="#">Drafts</a>
+            </div>
+          </div>
+          <div class="header-dropdown">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-bell"></i>
+              <span class="badge">5</span>
+            </button>
+            <div class="dropdown-content header-dropdown-content">
+              <a href="#">All Notifications</a>
+              <a href="#">Settings</a>
+            </div>
+          </div>
+          <button class="right-sidebar-toggle" aria-label="Open Right Sidebar">
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Your main page content goes here -->
+      <main style="padding: 80px 20px 20px 20px">
+        <h1>Welcome to ONNOTOMO Portfolio Management System</h1>
+        <p>Your main content goes here.</p>
+        <!-- Add more content as needed -->
+      </main>
+    </div>
+
+    <!-- Right Sidebar for Mobile -->
+    <aside class="right-sidebar">
+      <div class="right-sidebar-header">
+        <h2>Menu</h2>
+        <button class="close-right-sidebar" aria-label="Close Right Sidebar">
+          &times;
+        </button>
+      </div>
+      <ul>
+        <li>
+          <a href="#"><i class="fas fa-user"></i> Profile</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
+        <!-- Add more right sidebar items as needed -->
+      </ul>
+    </aside>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="asset/js/style.js"></script>
+  </body>
+</html>
