@@ -32,9 +32,23 @@
         <li>
           <a href="#"><i class="fas fa-home"></i> Home</a>
         </li>
+        <li>
+          <a href="#"><i class="fas fa-home"></i> Package</a>
+          <a href="#"><i class="fas fa-home"></i> Analysis Report</a>
+          <a href="#"><i class="fas fa-home"></i> Post</a>
+          <a href="#"><i class="fas fa-home"></i> News</a>
+          <a href="#"><i class="fas fa-home"></i> Message</a>
+          <a href="#"><i class="fas fa-home"></i> Entry Point</a>
+          <a href="#"><i class="fas fa-home"></i> Exit Point</a>
+          <a href="#"><i class="fas fa-home"></i> Community Wall</a>
+          <a href="#"><i class="fas fa-home"></i> Portofolio</a>
+          <a href="#"><i class="fas fa-home"></i> Payment History</a>
+          <a href="#"><i class="fas fa-home"></i> Profile</a>
+          <a href="#"><i class="fas fa-home"></i> Stock Market</a>
+        </li>
         <li class="sidebar-dropdown">
           <a href="#"
-            ><i class="fas fa-envelope"></i> Messages
+            ><i class="fas fa-envelope"></i> Market Menu
             <i class="fas fa-chevron-down dropdown-icon"></i
           ></a>
           <ul class="dropdown-content sidebar-dropdown-content">
@@ -43,17 +57,10 @@
             <li><a href="#">Drafts</a></li>
           </ul>
         </li>
-        <li class="sidebar-dropdown">
-          <a href="#"
-            ><i class="fas fa-bell"></i> Notifications
-            <i class="fas fa-chevron-down dropdown-icon"></i
-          ></a>
-          <ul class="dropdown-content sidebar-dropdown-content">
-            <li><a href="#">All Notifications</a></li>
-            <li><a href="#">Settings</a></li>
-          </ul>
+        <li>
+          <a href="#"><i class="fas fa-home"></i> Today Market</a>
+          <a href="#"><i class="fas fa-home"></i> Update News</a>
         </li>
-        <!-- Add more sidebar items as needed -->
       </ul>
     </aside>
 
@@ -96,9 +103,44 @@
       </header>
 
       <!-- Your main page content goes here -->
-      <main style="padding: 80px 20px 20px 20px">
+      <main style="padding: 70px 20px 20px 20px">
         <div class="row">
           <div class="col-md-8">
+            <div class="ticker">
+              <div class="ticker-wrap">
+                <div class="ticker-content">
+                  <!-- Original ticker items -->
+                  <span class="ticker-item"
+                    >Breaking News: Stock markets hit record highs.</span
+                  >
+                  <span class="ticker-item"
+                    >Sports Update: Local team wins the championship.</span
+                  >
+                  <span class="ticker-item"
+                    >Weather Alert: Heavy rains expected tomorrow.</span
+                  >
+                  <span class="ticker-item"
+                    >Technology: New smartphone released with advanced
+                    features.</span
+                  >
+                  <!-- Duplicate items for seamless scrolling -->
+                  <span class="ticker-item"
+                    >Breaking News: Stock markets hit record highs.</span
+                  >
+                  <span class="ticker-item"
+                    >Sports Update: Local team wins the championship.</span
+                  >
+                  <span class="ticker-item"
+                    >Weather Alert: Heavy rains expected tomorrow.</span
+                  >
+                  <span class="ticker-item"
+                    >Technology: New smartphone released with advanced
+                    features.</span
+                  >
+                </div>
+              </div>
+            </div>
+
             <div class="user-post">
               <div class="card shadow-sm">
                 <div class="card-body">
@@ -107,13 +149,15 @@
                       <i class="fa-regular fa-user"></i>
                     </div>
                     <div class="form-group flex-grow-1">
-                      <textarea
+                      <input
+                        class="form-control"
+                        type="text"
                         name="postContent"
                         id="postContent"
-                        class="form-control"
-                        rows="3"
+                        data-bs-toggle="modal"
+                        data-bs-target="#uploadModal"
                         placeholder="What's on your mind?"
-                      ></textarea>
+                      />
                     </div>
                   </div>
                   <hr />
@@ -203,6 +247,18 @@
                       Officia nam ipsa odio quaerat modi labore consectetur
                       fugiat accusamus suscipit autem!
                     </p>
+
+                    <a
+                      href="#"
+                      style="
+                        background-color: transparent;
+                        border: none;
+                        margin-top: 10px;
+                        color: teal;
+                        font-size: 13px;
+                      "
+                      >Read More</a
+                    >
                   </div>
 
                   <div class="news-media">
@@ -235,6 +291,76 @@
                         <i class="fa-solid fa-eye"></i>
                         100
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-2">
+                <div class="card-header">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                    "
+                  >
+                    <div class="d-flex">
+                      <div>
+                        <img
+                          style="width: 40px; height: 40px; border-radius: 50%"
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDKh7tKIyhZWaZqRFmYkPPnbeNqAf4S7eUew&s"
+                          alt=""
+                        />
+                      </div>
+                      <div class="news-info">
+                        <h4>
+                          ONNOTOMO
+                          <span>shared <a href="">অর্থসূচক</a> news</span>
+                        </h4>
+                        <span>1 min ago</span>
+                      </div>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="news-description">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Officia nam ipsa odio quaerat modi labore consectetur
+                      fugiat accusamus suscipit autem!
+                    </p>
+                  </div>
+
+                  <a
+                    href="#"
+                    style="
+                      background-color: transparent;
+                      border: none;
+                      margin-top: 10px;
+                      color: teal;
+                      font-size: 13px;
+                    "
+                    >Read More</a
+                  >
+                </div>
+                <div class="card-footer">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div class="news-footer-info">
+                      <p>origin: arthosuchok</p>
+                      <p>content : Read</p>
+                    </div>
+                    <div>
+                      <a href="" class="btn btn-sm btn-info">
+                        <i class="fa-brands fa-facebook"></i>
+                      </a>
+                      <a href="" class="btn btn-sm btn-info">
+                        <i class="fa-brands fa-twitter"></i>
+                      </a>
                     </div>
                   </div>
                 </div>

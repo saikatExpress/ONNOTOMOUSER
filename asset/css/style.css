@@ -17,6 +17,10 @@ body {
   display: flex;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
   cursor: pointer;
 }
@@ -163,16 +167,22 @@ button {
 
 .sidebar-menu {
   list-style: none;
+  height: 90vh;
+  overflow: scroll;
 }
 
 .sidebar-menu li {
   position: relative;
 }
 
+.sidebar-menu li a i {
+  margin-right: 10px;
+}
+
 .sidebar-menu li a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 15px 20px;
   color: #ecf0f1;
   text-decoration: none;
@@ -214,6 +224,7 @@ button {
 .main-content {
   margin-left: 250px;
   width: 100%;
+  overflow: hidden;
   transition: margin-left 0.3s ease-in-out;
 }
 
@@ -409,8 +420,8 @@ button {
 }
 
 .user-post-icon {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #8080808c;
   position: relative;
@@ -449,6 +460,12 @@ button {
   height: 250px;
 }
 
+.news-footer-info p {
+  margin-bottom: 0;
+  color: teal;
+  font-size: 12px;
+}
+
 .news-description p {
   margin-bottom: 0;
   line-height: 30px;
@@ -458,8 +475,45 @@ button {
 
 .user-post-icon i {
   position: absolute;
-  top: 34%;
-  left: 35%;
+  top: 33%;
+  left: 33%;
+  font-size: 14px;
+}
+
+.ticker {
+  width: 100%;
+  overflow: hidden;
+  background-color: #4b93db;
+  border: 1px solid #ccc;
+  padding: 3px 0;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.ticker-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.ticker-content {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ticker-scroll 30s linear infinite; /* Slowed down the animation */
+}
+
+.ticker-item {
+  margin-right: 50px;
+  font-size: 16px;
+  color: #333;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0); /* Start from the beginning */
+  }
+  100% {
+    transform: translateX(-50%); /* Move to the left until half the content */
+  }
 }
 
 .form-group {
